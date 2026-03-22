@@ -1,0 +1,393 @@
+{
+  "hero": {
+    "invocation": "॥ श्री गणेशाय नमः ॥",
+    "title": "Dandotiya",
+    "subtitle": "Family Heritage Portal",
+    "tagline": {
+      "type": "root",
+      "children": [
+        {
+          "type": "p",
+          "children": [
+            { "type": "text", "text": "Bhrigu Vansh · Yajur Veda · Madhyandini Shakha" }
+          ]
+        },
+        {
+          "type": "p",
+          "children": [
+            { "type": "text", "text": "A name spoken into eternity by Lord Krishna himself" }
+          ]
+        }
+      ]
+    },
+    "scrollLabel": "Scroll"
+  },
+  "identity": {
+    "sectionLabel": "Who We Are",
+    "sectionTitle": "Core Identity",
+    "cards": [
+      {
+        "icon": "🕉️",
+        "label": "Varna",
+        "value": "Brahmin",
+        "note": "The priestly & scholarly class, keepers of Vedic knowledge and sacred tradition"
+      },
+      {
+        "icon": "🔥",
+        "label": "Gotra",
+        "value": "Bhrigu",
+        "note": "Descended from the Saptarishi Maharishi Bhrigu, mind-born son of Lord Brahma"
+      },
+      {
+        "icon": "⚡",
+        "label": "Vansh",
+        "value": "Bhrigu Vanshi",
+        "note": "The Bhargava lineage — one of the eight foundational gotra clans of the Vedic tradition"
+      },
+      {
+        "icon": "📜",
+        "label": "Shakha",
+        "value": "Madhyandini",
+        "note": "Branch of Shukla Yajurveda — contains 40 adhyayas, 1,975 mantras including the Isavasyopanishad"
+      },
+      {
+        "icon": "🕯️",
+        "label": "Veda",
+        "value": "Yajur Veda",
+        "note": "The Veda of sacred action — governs yajna procedures, samskara rites, and all sacred ceremonies"
+      },
+      {
+        "icon": "🏘️",
+        "label": "Community Reach",
+        "value": "28 Villages",
+        "note": "The Dandotiya community's ancestral presence spans approximately 28 villages in the region"
+      }
+    ],
+    "loreTitle": "॥ The Gotra System — What It Means ॥",
+    "loreText": "A gotra is more than a surname — it is an unbroken patrilineal chain reaching back thousands of years to one of the founding Vedic sages. To say \"our gotra is Bhrigu\" means our male lineage descends from Maharishi Bhrigu himself. In Vedic ritual, one declares this ancestry as proof of spiritual fitness: \"I am a descendant of worthy ancestors, a fit person to perform this sacred act.\" Marriage within the same gotra is forbidden — those who share a gotra are considered brother and sister, descendants of the same ancient father."
+  },
+  "bhrigu": {
+    "sectionLabel": "Our Ancestral Rishi",
+    "sectionTitle": "Maharishi Bhrigu",
+    "portrait": {
+      "icon": "🌟",
+      "name": "Maharishi Bhrigu",
+      "devName": "महर्षि भृगु",
+      "role": "Saptarishi · Prajapati · Father of Hindu Astrology"
+    },
+    "facts": [
+      {
+        "label": "Origin",
+        "text": "A Manasaputra — mind-born son of Lord Brahma, created from the divine skin (tvak) of Brahma during the act of creation. One of the ten Prajapatis entrusted with assisting the creation of the universe."
+      },
+      {
+        "label": "In the Bhagavad Gita",
+        "text": "Lord Krishna himself declares in the Gita (10.25): \"Among sages, Bhrigu is the representative of My divine opulence.\" — the highest honour a sage can receive from God himself."
+      },
+      {
+        "label": "The Test of the Trimurti",
+        "text": "Bhrigu was chosen by sages to test Brahma, Shiva, and Vishnu to determine who is supreme. After all tests, Vishnu's extraordinary humility — pressing the sage's feet after being kicked — led Bhrigu to declare Vishnu the greatest of the Trinity."
+      },
+      {
+        "label": "Bhrigu Samhita",
+        "text": "Bhrigu authored the Bhrigu Samhita — the first treatise on predictive astrology, said to contain over 500,000 birth chart horoscopes. This is the foundation of Vedic jyotisha, still consulted by practitioners today."
+      },
+      {
+        "label": "Divine Family Tree",
+        "text": "His daughter Lakshmi married Lord Vishnu (why she is called Bhargavi — daughter of Bhrigu). His son Shukracharya became the guru of the asuras. His descendant Jamadagni fathered Parashurama, the sixth avatar of Vishnu."
+      },
+      {
+        "label": "Our Connection",
+        "text": "The Dandotiya family traces its unbroken male lineage to this same Bhrigu — the sage who shaped Vedic law, fathered Lakshmi, and whose line produced Parashurama. Every Dandotiya carries this cosmic ancestry."
+      }
+    ]
+  },
+  "origin": {
+    "sectionLabel": "The Legend",
+    "sectionTitle": "Origin of the Dandotiya Name",
+    "steps": [
+      {
+        "number": 1,
+        "title": "The Doneriya Brahmins",
+        "text": "Before the name Dandotiya existed, this family was known as the Doneriya Brahmins — rooted in Donergarh, within the Bhrigu Vansh, faithfully following the Madhyandini Shakha of Shukla Yajurveda. Their spiritual practice had been unbroken for generations."
+      },
+      {
+        "number": 2,
+        "title": "Kishandas ji — The Devotee",
+        "text": "From this lineage arose Kishandas ji, born approximately in Samvat 1310 (≈ 1253 CE). He was no ordinary seeker. He undertook decades of intense tapasya — austerities so deep they set him apart from ordinary Brahmin life. His heart had one destination: the divine presence of Lord Krishna.",
+        "tag": "Samvat 1310 — Birth of Kishandas ji"
+      },
+      {
+        "number": 3,
+        "title": "The Journey to Dwarka",
+        "text": "Kishandas ji's path led him to Dwarka — the legendary city on India's western coast built by Lord Krishna himself. Modern archaeology has confirmed that a city did indeed exist here and was submerged beneath the Arabian Sea around 1500 BCE. The Mahabharata records: on the day Krishna departed this world, Dwarka was consumed by the ocean. For Kishandas ji, this was not myth — it was a living truth."
+      },
+      {
+        "number": 4,
+        "title": "The Hidden Truth",
+        "text": "At Dwarka, Kishandas ji was told something that would test every boundary of his faith: the true Dwarka does not lie on land. It rests beneath the ocean's waves — just as the scriptures and the ocean's own memory confirm. Only a soul of absolute surrender could enter and return."
+      },
+      {
+        "number": 5,
+        "title": "The Ocean's Gift",
+        "text": "With total faith, Kishandas ji walked into the sea. He did not drown. He transcended. In those sacred depths — in the divine city that Vishwakarma himself had built, with its 900,000 crystal palaces and emerald-studded walls — he came face to face with the eternal presence of Lord Shri Krishna."
+      }
+    ],
+    "divineQuote": {
+      "attribution": "— Lord Shri Krishna, addressing Kishandas ji in the sacred depths of Dwarka —",
+      "quote": "\"Come, Dandotiya\"",
+      "subtext": "In that single utterance, a title was born. Not inherited. Not chosen. Bestowed by the Lord himself upon a soul who had earned it through complete devotion. From that moment, the lineage was transformed forever."
+    },
+    "finalStep": {
+      "number": 6,
+      "title": "A New Name — A Sacred Title",
+      "text": "Dandotiya is not merely a surname. It is a padavi — a divine title — spoken by Krishna himself. The lineage progression: Doneriya → Kishandas ji → Dandotiya. Every member of this family today carries a name that originated not in a government registry or a village custom, but in the mouth of God."
+    }
+  },
+  "dwarka": {
+    "sectionLabel": "Sacred Context",
+    "sectionTitle": "The City Beneath the Sea",
+    "cards": [
+      {
+        "icon": "🌊",
+        "title": "Dwarka — City of Krishna",
+        "text": "Dwarka (Sanskrit: \"Gateway to Heaven\") was built by Lord Krishna on India's western coast in Gujarat after he moved his clan from Mathura. Divine architect Vishwakarma designed it with 900,000 crystal palaces, emerald walls, and boulevards lined with jewelled trees. The Bhagavata Purana describes it as so magnificent that even the gods were envious.",
+        "fact": "\"Dwaraka boasted 900,000 royal palaces, all constructed with crystal and silver, splendorously decorated with huge emeralds.\" — Bhagavata Purana"
+      },
+      {
+        "icon": "🔱",
+        "title": "The Submersion",
+        "text": "The Mahabharata records that on the very day Lord Krishna departed from this world, Dwarka was reclaimed by the ocean — exactly as prophesied. The Kali Yuga began at that moment. The true Dwarka is therefore not on land — it is beneath the sea, exactly as Kishandas ji was told when he arrived at the shore.",
+        "fact": "Archaeology confirms: Marine excavations (1983–1990) by India's National Institute of Oceanography uncovered submerged structures, stone anchors, fortification walls and dressed stone blocks off the coast of modern Dwarka — dated to approximately 1500 BCE."
+      }
+    ]
+  },
+  "vedic": {
+    "sectionLabel": "Spiritual Framework",
+    "sectionTitle": "Vedic Identity in Depth",
+    "cards": [
+      {
+        "icon": "📖",
+        "title": "Yajur Veda",
+        "main": "The Veda of Sacred Action",
+        "text": "The second of the four Vedas. Where Rig Veda gives hymns and Sama Veda gives melody, Yajur Veda gives the precise instructions for performing yagnas — sacrificial rites. Every fire ceremony, every samskara, every major ritual in a Brahmin's life is governed by Yajur Veda."
+      },
+      {
+        "icon": "🌅",
+        "title": "Madhyandini Shakha",
+        "main": "Branch of Shukla Yajurveda",
+        "text": "One of only two surviving branches of Shukla (White) Yajurveda. Contains 40 adhyayas and 1,975 mantras — including the Isavasyopanishad (40th adhyaya), one of the principal Upanishads. Today prevalent in Uttar Pradesh, Madhya Pradesh, Rajasthan, Maharashtra, and Nepal."
+      },
+      {
+        "icon": "🧵",
+        "title": "Pravara System",
+        "main": "The Three Ancestral Rishis",
+        "text": "Every Brahmin's full identity includes their pravara — the 3 or 5 most eminent rishis of their gotra lineage, named during the sacred thread ceremony. For the Bhrigu gotra, this chain traces through Bhrigu, Chyavana, Apnuvana, Aurva, and Jamadagni."
+      },
+      {
+        "icon": "⚖️",
+        "title": "Bhargava Lineage",
+        "main": "The Bhrigu-Born Clan",
+        "text": "The Bhargavas (descendants of Bhrigu) were the traditional purohitas of the Haihaya dynasty kings. The lineage produced Shukracharya (guru of the asuras), Jamadagni, Parashurama (Vishnu avatar), and the great sage Dadhichi. Being Bhrigu Vanshi is to share ancestry with the most powerful sages in Hindu lore."
+      },
+      {
+        "icon": "🔗",
+        "title": "Gotra Rules",
+        "main": "The Living Law",
+        "text": "Dandotiyas with Bhrigu gotra cannot marry someone also of the Bhrigu gotra — they are considered brother and sister. Furthermore, since Bhrigu and Angirasa share common Pravara rishis, those gotras cannot intermarry either. This has functioned as a genetic and spiritual safeguard for thousands of years."
+      },
+      {
+        "icon": "📿",
+        "title": "Upanayana",
+        "main": "Sacred Thread Ceremony",
+        "text": "When tying the sacred thread (yajnopavita), a Dandotiya boy formally declares his gotra, pravara, shakha, and sutra — announcing his full Vedic identity to the world. This is the moment the ancient chain is renewed. Each new generation becomes a living link between Maharishi Bhrigu and the future."
+      }
+    ]
+  },
+  "deities": {
+    "sectionLabel": "Our Sacred Protectors",
+    "sectionTitle": "Kul Devi & Ishta Devta",
+    "cards": [
+      {
+        "icon": "🌸",
+        "role": "Kul Devi — Primary",
+        "name": "Katyayani Devi",
+        "devName": "कात्यायनी देवी",
+        "description": "The sixth form of Maa Durga, first mentioned in the Taittiriya Aranyaka of Yajurveda. Born from the combined divine anger of all the gods to slay Mahishasura. She rides a lion and wields the Chandrahasa sword. The Bhagavata Purana records that the Gopis of Vrindavana worshipped Katyayani Devi to receive Krishna as their husband — a deeply Krishnaite connection that mirrors the Dandotiya family's own divine bond with Lord Krishna. She grants Dharma, Artha, Kama, and Moksha to her devotees."
+      },
+      {
+        "icon": "🪷",
+        "role": "Kul Devi — Second",
+        "name": "Vaishnavi Devi",
+        "devName": "वैष्णवी देवी",
+        "description": "One of the Matrikas — the divine mother goddesses — Vaishnavi is the Shakti of Lord Vishnu himself. She carries his weapons and attributes: the Sudarshana Chakra, conch, mace, and lotus. As a Kul Devi of the Dandotiya family, Vaishnavi Devi forms a perfect pair with Katyayani — representing both the fierce protective Shakti and the sustaining grace of Vaishnava tradition."
+      },
+      {
+        "icon": "🏹",
+        "role": "Ishta Devta — Personal Deity",
+        "name": "Shri Raghunath Bhagwan",
+        "devName": "श्री रघुनाथ भगवान",
+        "description": "Raghunath — the Lord of the Raghu dynasty — is a name for Lord Rama, the seventh avatar of Vishnu, the embodiment of dharma and ideal kingship. The Dandotiya family's devotion to both Rama (via Raghunath) and Krishna (the divine encounter at Dwarka) reflects a complete Vaishnava spiritual identity — the two most beloved incarnations of Vishnu are both present in this family's sacred world."
+      }
+    ]
+  },
+  "timeline": {
+    "sectionLabel": "Through the Ages",
+    "sectionTitle": "Historical Timeline",
+    "events": [
+      {
+        "era": "Ancient Era",
+        "event": "Doneriya Brahmin Origins",
+        "description": "The family exists as Doneriya Brahmins in Donergarh — Bhrigu gotra, Yajur Veda, Madhyandini Shakha. Faithful keepers of the Vedic tradition for generations."
+      },
+      {
+        "era": "Samvat 1310 · ≈ 1253 CE",
+        "event": "Birth of Kishandas ji",
+        "description": "The man who would transform the family's name into a divine title is born into the Doneriya lineage. His extraordinary spiritual destiny is already written."
+      },
+      {
+        "era": "Decades of Devotion",
+        "event": "The Great Tapasya",
+        "description": "Kishandas ji undertakes years of intense spiritual discipline — fasting, meditation, pilgrimage. His journey takes him across the sacred geography of India toward Dwarka."
+      },
+      {
+        "era": "The Dwarka Period",
+        "event": "Divine Encounter in the Sea",
+        "description": "Kishandas ji walks into the ocean at Dwarka with absolute faith. In the submerged sacred city, he meets Lord Krishna. The Lord addresses him: \"Come, Dandotiya.\" A title is born."
+      },
+      {
+        "era": "Post-Encounter",
+        "event": "The Lineage Transforms",
+        "description": "Doneriya → Dandotiya. The family carries its new divine title. Migration follows the path Donergarh → Kishanpura → Badokhar, spreading across approximately 28 villages."
+      },
+      {
+        "era": "Samvat 1527 · ≈ 1470 CE",
+        "event": "Sati of Sujan Devi",
+        "description": "A profound moment of sacrifice recorded in family chronicles: the Sati event of Jeevandas and Sujan Devi. An act of devotion so significant it was preserved across centuries of oral history."
+      },
+      {
+        "era": "Ancestral Settlement",
+        "event": "Badokhar — Heart of the Community",
+        "description": "Badokhar is established as the central ancestral settlement — the spiritual and cultural anchor of the Dandotiya community across the region."
+      },
+      {
+        "era": "Today · Present Day",
+        "event": "A Living Heritage",
+        "description": "The Dandotiya family continues — carriers of a name given by Krishna, a lineage traced to Maharishi Bhrigu, and a Vedic tradition stretching back thousands of years to the dawn of civilisation."
+      }
+    ]
+  },
+  "geography": {
+    "sectionLabel": "Pilgrimage & Purpose",
+    "sectionTitle": "Sacred Geography",
+    "sites": [
+      {
+        "icon": "🏔️",
+        "name": "Haridwar",
+        "description": "Gateway to the Gods — where the Ganga descends from the Himalayas to the plains. One of four sacred cities of the Kumbh Mela, visited by pilgrims for millennia."
+      },
+      {
+        "icon": "⛰️",
+        "name": "Badrinath",
+        "description": "Sacred abode of Lord Vishnu at 10,000+ feet in the Himalayas. One of the Char Dham and the Panch Kedar. Lord Vishnu — ancestor of the Dandotiya's Kul Devis — resides here eternally."
+      },
+      {
+        "icon": "🏰",
+        "name": "Lohagarh",
+        "description": "Ancient iron fortress with deep ties to the community's spiritual roots. A place of historical and martial significance woven into the family's geographic memory."
+      },
+      {
+        "icon": "🌊",
+        "name": "Dwarka",
+        "description": "The holiest site in the Dandotiya heritage. Where Kishandas ji entered the ocean and emerged with a name given by Krishna. One of India's Sapta Puri — seven most sacred cities. The Dwarkadhish Temple is among the Char Dham."
+      },
+      {
+        "icon": "🌺",
+        "name": "Kolhapur",
+        "description": "Sacred seat of Mahalakshmi — who, as Bhargavi, is the daughter of Bhrigu Rishi himself. Her temple at Kolhapur is one of the 51 Shakti Peethas. The Dandotiya family's own ancestor is the grandfather of the goddess."
+      },
+      {
+        "icon": "🎵",
+        "name": "Yamuna / Mathura",
+        "description": "Birthplace of Lord Krishna. Where the Gopis worshipped Katyayani Devi — the Dandotiya family's own Kul Devi — to receive Krishna as their husband. A profound spiritual loop connecting deity, devotee, and place."
+      }
+    ]
+  },
+  "migration": {
+    "sectionLabel": "The Journey",
+    "sectionTitle": "Ancestral Migration Path",
+    "nodes": [
+      {
+        "icon": "🏛️",
+        "name": "Donergarh",
+        "subtitle": "Origin · Doneriya Brahmin roots"
+      },
+      {
+        "icon": "🌿",
+        "name": "Kishanpura",
+        "subtitle": "Named in honour of Kishandas ji"
+      },
+      {
+        "icon": "🏡",
+        "name": "Badokhar",
+        "subtitle": "Central ancestral settlement"
+      }
+    ]
+  },
+  "outro": {
+    "lines": [
+      { "text": "Every family has a story...", "highlight": false },
+      { "text": "This is the story of the Dandotiya family.", "highlight": true },
+      { "text": "Rooted in the lineage of Maharishi Bhrigu —", "highlight": false },
+      { "text": "one of the seven great sages, mind-born son of Brahma,", "highlight": false },
+      { "text": "declared by Krishna himself as his divine representative among the rishis.", "highlight": false },
+      { "text": "Guided by Katyayani Devi, Vaishnavi Devi,", "highlight": false },
+      { "text": "and Shri Raghunath Bhagwan.", "highlight": false },
+      { "text": "Kishandas ji walked the path of devotion for decades.", "highlight": false },
+      { "text": "He reached Dwarka. He entered the sea.", "highlight": false },
+      { "text": "He walked into the submerged golden city that Vishwakarma built for God.", "highlight": false },
+      { "text": "There, he met Lord Krishna.", "highlight": false },
+      { "text": "The Lord said:", "highlight": false },
+      { "text": "\"Come, Dandotiya\"", "highlight": true },
+      { "text": "From that moment, a name was born.", "highlight": false },
+      { "text": "A legacy was created.", "highlight": true }
+    ],
+    "seal": {
+      "om": "ॐ",
+      "text": "Bhrigu Vansh · Dandotiya Kul · Since Samvat 1310"
+    }
+  },
+  "footnotes": {
+    "title": "॥ Research Notes — Sources & Context ॥",
+    "cards": [
+      {
+        "heading": "Bhrigu & the Bhagavad Gita",
+        "body": "Lord Krishna's declaration in Gita 10.25 — \"among sages, Bhrigu is my divine opulence\" — gives the Dandotiya gotra a direct scriptural connection to Krishna himself, beyond even the Dwarka story."
+      },
+      {
+        "heading": "Dwarka Archaeology",
+        "body": "Marine excavations by India's National Institute of Oceanography (1983–1990) found submerged structures, stone anchors, and fortification walls off Dwarka's coast — confirming the ancient city's historical basis. S.R. Rao dated evidence to approx. 1500 BCE."
+      },
+      {
+        "heading": "Katyayani & Yajurveda",
+        "body": "Katyayani Devi is first mentioned in the Taittiriya Aranyaka of the Yajurveda — the same Vedic tradition the Dandotiya family follows. The Bhagavata Purana records Gopis worshipping her for Krishna's love, directly linking her to the Dandotiya's divine story."
+      },
+      {
+        "heading": "Madhyandini Shakha",
+        "body": "One of only two surviving branches of Shukla Yajurveda. Today prevalent in Rajasthan, UP, MP, Maharashtra, and Nepal. Contains the Isavasyopanishad (40th adhyaya) — one of the most important Upanishads in the Vedanta tradition."
+      },
+      {
+        "heading": "Samvat Conversion",
+        "body": "Vikram Samvat runs approximately 57 years ahead of the Gregorian calendar. Samvat 1310 ≈ 1253 CE (birth of Kishandas ji). Samvat 1527 ≈ 1470 CE (Sati of Sujan Devi). These place the family's formative events in India's medieval period."
+      },
+      {
+        "heading": "Bhargava & Lakshmi",
+        "body": "Being Bhrigu Vanshi means the Dandotiya family shares ancestry with Lakshmi herself (Bhargavi — daughter of Bhrigu). She married Vishnu. Shukracharya, Parashurama, and Jamadagni are all family members in the cosmic sense."
+      }
+    ]
+  },
+  "footer": {
+    "brand": "Dandotiya Heritage Portal",
+    "note": "Based on family records, oral history, and Vedic scholarly research"
+  }
+}
