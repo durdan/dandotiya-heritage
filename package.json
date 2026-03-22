@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:tina": "tinacms dev -c \"next dev --webpack\"",
-    "build": "next build",
+    "build": "tinacms build && next build --webpack",
     "start": "next start"
   },
   "dependencies": {

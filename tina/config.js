@@ -232,7 +232,9 @@ const footerFields = [
 ];
 
 export default defineConfig({
-  branch: "main",
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "0f9037c0-6403-48a3-9a1b-58f225d2bc82",
+  token: process.env.TINA_TOKEN || "4e363254eaa2e8a61a241f5729328ddf4a12002a",
+  branch: process.env.TINA_BRANCH || "main",
   build: {
     outputFolder: "admin",
     publicFolder: "public",
