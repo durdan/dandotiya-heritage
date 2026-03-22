@@ -872,6 +872,17 @@ export default function AdminPage() {
           <p style={S.sidebarTitle}>दंडोतिया विरासत</p>
           <p style={S.sidebarSubtitle}>संपादक / Editor</p>
         </div>
+
+        {/* Language toggle in sidebar */}
+        <div style={{ display: "flex", gap: 4, padding: "0 12px 12px", borderBottom: `1px solid ${colors.border}` }}>
+          <button style={{ ...S.langTab(lang === "hi"), flex: 1 }} onClick={() => handleLangSwitch("hi")}>
+            हिन्दी
+          </button>
+          <button style={{ ...S.langTab(lang === "en"), flex: 1 }} onClick={() => handleLangSwitch("en")}>
+            English
+          </button>
+        </div>
+
         <nav>
           {SECTION_KEYS.map((key) => (
             <button
@@ -883,7 +894,20 @@ export default function AdminPage() {
             </button>
           ))}
         </nav>
-        <div style={{ padding: "16px", borderTop: `1px solid ${colors.border}` }}>
+
+        {/* Save + Preview + Logout in sidebar */}
+        <div style={{ padding: "12px", borderTop: `1px solid ${colors.border}`, display: "flex", flexDirection: "column", gap: 8 }}>
+          <button style={{ ...S.saveBtn, width: "100%" }} onClick={handleSave}>
+            Save / सहेजें
+          </button>
+          <a
+            style={{ ...S.previewLink, textAlign: "center", display: "block" }}
+            href={lang === "en" ? "/en" : "/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Preview site ↗
+          </a>
           <button
             style={{ ...S.removeBtn, width: "100%", background: colors.textMuted, fontSize: 12 }}
             onClick={handleLogout}
@@ -895,30 +919,6 @@ export default function AdminPage() {
 
       {/* Main area */}
       <main style={S.main}>
-        {/* Top bar */}
-        <div style={S.topBar}>
-          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-            <button style={S.langTab(lang === "hi")} onClick={() => handleLangSwitch("hi")}>
-              हिन्दी (Hindi)
-            </button>
-            <button style={S.langTab(lang === "en")} onClick={() => handleLangSwitch("en")}>
-              English
-            </button>
-          </div>
-          <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-            <a
-              style={S.previewLink}
-              href={lang === "en" ? "/en" : "/"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Preview site
-            </a>
-            <button style={S.saveBtn} onClick={handleSave}>
-              Save / सहेजें
-            </button>
-          </div>
-        </div>
 
         {/* Editor */}
         <div style={S.editor}>
