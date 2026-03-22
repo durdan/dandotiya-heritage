@@ -775,14 +775,16 @@ export default function AdminPage() {
     setPwInput("");
   };
 
-  // Fetch content
+  // Fetch content (from GitHub via API)
+  const [contentSha, setContentSha] = useState(null);
   const fetchContent = useCallback(async (language) => {
     setLoading(true);
     try {
       const res = await fetch(`/api/content?lang=${language}`);
       if (!res.ok) throw new Error("Failed to fetch");
       const json = await res.json();
-      setData(json);
+      setData(json.content || json);
+      if (json.sha) setContentSha(json.sha);
     } catch (err) {
       showToast("error", "Failed to load content");
     } finally {
@@ -805,12 +807,17 @@ export default function AdminPage() {
       const res = await fetch("/api/content", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lang, content: data }),
+        body: JSON.stringify({ lang, content: data, sha: contentSha }),
       });
-      if (!res.ok) throw new Error("Failed to save");
-      showToast("success", "Saved successfully! / सहेजा गया!");
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error || "Failed to save");
+      if (result.success) {
+        showToast("success", result.message || "Saved & committed! Site will redeploy.");
+        // Refresh to get new SHA
+        fetchContent(lang);
+      }
     } catch (err) {
-      showToast("error", "Failed to save / सहेजने में त्रुटि");
+      showToast("error", err.message || "Failed to save / सहेजने में त्रुटि");
     }
   };
 
