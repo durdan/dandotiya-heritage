@@ -61,6 +61,8 @@ export default function RootLayout({ children }) {
     >
       <head>
         <meta name="theme-color" content="#F5EDD8" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
       <body>{children}</body>
     </html>
