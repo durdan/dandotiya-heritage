@@ -291,6 +291,15 @@ section { position: relative; }
 .tree-container { width: 100%; height: calc(100vh - 58px); position: relative; overflow: hidden; background: var(--bg); background-image: radial-gradient(circle, rgba(196, 92, 0, .1) 1px, transparent 1px); background-size: 26px 26px; cursor: grab; }
 .tree-overlay .tree-container { height: auto; flex: 1 1 0%; }
 .tree-container.drag { cursor: grabbing; }
+/* click-to-interact hint */
+.tree-container::after {
+  content: 'क्लिक करें — वृक्ष में ज़ूम/पैन करने के लिए';
+  position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);
+  background: rgba(26, 15, 0, .75); color: #F5EDD8; padding: 8px 20px;
+  border-radius: 20px; font-size: 13px; font-family: var(--font-noto);
+  pointer-events: none; z-index: 20; transition: opacity .3s;
+}
+.tree-container.tree-active::after { opacity: 0; }
 .tree-controls { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; background: var(--bg2); border-top: 1px solid var(--border); flex-wrap: wrap; }
 .tc-btn { background: var(--saffron); border: none; color: #fff; font-size: 12px; padding: 7px 14px; border-radius: 3px; cursor: pointer; transition: background .18s; font-weight: 600; }
 .tc-btn:hover, .tc-btn:active { background: var(--saf-l); }

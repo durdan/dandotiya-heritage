@@ -90,7 +90,7 @@ export default function FamilyTree() {
     rafId: 0, smoothing: false,
     dragging: false, dragSX: 0, dragSY: 0, dragPXs: 0, dragPYs: 0,
     pinchDist0: 0, pinchSc0: 1, pinchCX: 0, pinchCY: 0,
-    touching: 0,
+    touching: 0, activated: false,
   });
 
   /* ── helpers exposed to JSX ── */
@@ -477,8 +477,9 @@ export default function FamilyTree() {
       wrap.style.cursor = '';
     }
 
-    /* wheel zoom with inertia */
+    /* wheel zoom with inertia — only when tree is activated */
     function onWheel(ev) {
+      if (!s.activated) return; /* let page scroll through */
       ev.preventDefault();
       const rect = wrap.getBoundingClientRect();
       const mx = ev.clientX - rect.left;
@@ -542,8 +543,21 @@ export default function FamilyTree() {
       s.touching = 0;
     }
 
+    /* activate tree on click — shows hint overlay until clicked */
+    function activateTree() {
+      s.activated = true;
+      wrap.classList.add('tree-active');
+    }
+    function deactivateTree(e) {
+      if (wrap && !wrap.contains(e.target)) {
+        s.activated = false;
+        wrap.classList.remove('tree-active');
+      }
+    }
+
     /* close panel on background click */
     function onWrapClick(e) {
+      activateTree();
       if (!e.target.closest('.t-node') && !e.target.closest('#t-panel')) {
         panel.classList.remove('vis');
       }
@@ -558,6 +572,7 @@ export default function FamilyTree() {
     wrap.addEventListener('touchmove', onTouchMove, {passive: false});
     wrap.addEventListener('touchend', onTouchEnd);
     wrap.addEventListener('click', onWrapClick);
+    document.addEventListener('click', deactivateTree);
 
     /* cleanup */
     return () => {
@@ -569,6 +584,7 @@ export default function FamilyTree() {
       wrap.removeEventListener('touchmove', onTouchMove);
       wrap.removeEventListener('touchend', onTouchEnd);
       wrap.removeEventListener('click', onWrapClick);
+      document.removeEventListener('click', deactivateTree);
       window.removeEventListener('resize', onResize);
       if (s.rafId) cancelAnimationFrame(s.rafId);
     };
