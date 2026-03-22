@@ -104,33 +104,34 @@ export default function PortalPage({ content, lang }) {
 
       {/* ══════ HERO ══════ */}
       <section className="hero" id="home">
-        <Mandala />
-        <Particles />
-        <div className="h-eye" style={{ fontFamily: fontUI }}>
-          {content.hero.invocation}
+        <div className="hero-text">
+          <Mandala />
+          <Particles />
+          <div className="h-eye" style={{ fontFamily: fontUI }}>
+            {content.hero.invocation}
+          </div>
+          <h1 className="h-title" style={{ fontFamily: fontUI }}>
+            {content.hero.title}
+          </h1>
+          <div className="h-sub" style={{ fontFamily: fontUI }}>
+            {content.hero.subtitle}
+          </div>
+          <div className="h-div">
+            <span className="h-line" />
+            <span className="h-om">ॐ</span>
+            <span className="h-line" />
+          </div>
+          <div className="h-tag" style={{ fontFamily: fontUI }}>
+            {taglineLines.map((line, i) => (
+              <span key={i}>
+                {i > 0 && <br />}
+                {line}
+              </span>
+            ))}
+          </div>
         </div>
-        <h1 className="h-title" style={{ fontFamily: fontUI }}>
-          {content.hero.title}
-        </h1>
-        <div className="h-sub" style={{ fontFamily: fontUI }}>
-          {content.hero.subtitle}
-        </div>
-        <div className="h-div">
-          <span className="h-line" />
-          <span className="h-om">ॐ</span>
-          <span className="h-line" />
-        </div>
-        <div className="h-tag" style={{ fontFamily: fontUI }}>
-          {taglineLines.map((line, i) => (
-            <span key={i}>
-              {i > 0 && <br />}
-              {line}
-            </span>
-          ))}
-        </div>
-        <div className="scroll-ind" style={{ fontFamily: fontUI }}>
-          <span>{content.hero.scrollLabel}</span>
-          <div className="scroll-arrow" />
+        <div className="hero-banner">
+          <img src="/hero-bg.png" alt={lang === 'hi' ? 'भृगु वंश परिवार वृक्ष' : 'Bhrigu Vansh Family Tree'} />
         </div>
       </section>
 
