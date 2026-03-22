@@ -286,7 +286,8 @@ const S = {
     top: 0,
     left: 0,
     bottom: 0,
-    overflowY: "auto",
+    display: "flex",
+    flexDirection: "column",
     zIndex: 10,
   },
   sidebarHeader: {
@@ -883,20 +884,50 @@ export default function AdminPage() {
           </button>
         </div>
 
-        <nav>
-          {SECTION_KEYS.map((key) => (
+        <nav style={{ flex: 1, overflowY: "auto" }}>
+          {SECTION_KEYS.map((key, i) => (
             <button
               key={key}
               style={S.navItem(activeSection === key)}
               onClick={() => setActiveSection(key)}
             >
+              <span style={{ fontSize: 11, opacity: 0.5, marginRight: 6 }}>{i + 1}.</span>
               {SCHEMA[key].label}
             </button>
           ))}
+          {/* Show custom sections from data */}
+          {data && data.customSections && data.customSections.map((sec, i) => (
+            <button
+              key={`custom-${i}`}
+              style={S.navItem(activeSection === `custom-${i}`)}
+              onClick={() => setActiveSection(`custom-${i}`)}
+            >
+              <span style={{ fontSize: 11, opacity: 0.5, marginRight: 6 }}>+</span>
+              {sec.sectionTitle || `New Section ${i + 1}`}
+            </button>
+          ))}
+          <button
+            style={{ ...S.navItem(false), color: colors.accentHover, fontStyle: "italic", fontSize: 13 }}
+            onClick={() => {
+              if (!data) return;
+              const updated = { ...data };
+              if (!updated.customSections) updated.customSections = [];
+              updated.customSections.push({
+                sectionLabel: "",
+                sectionTitle: lang === "hi" ? "नया अनुभाग" : "New Section",
+                content: "",
+                position: "after-geography",
+              });
+              setData(updated);
+              setActiveSection(`custom-${updated.customSections.length - 1}`);
+            }}
+          >
+            + Add New Section
+          </button>
         </nav>
 
-        {/* Save + Preview + Logout in sidebar */}
-        <div style={{ padding: "12px", borderTop: `1px solid ${colors.border}`, display: "flex", flexDirection: "column", gap: 8 }}>
+        {/* Save + Preview + Logout — pinned at bottom */}
+        <div style={{ padding: "12px", borderTop: `1px solid ${colors.border}`, display: "flex", flexDirection: "column", gap: 8, flexShrink: 0 }}>
           <button style={{ ...S.saveBtn, width: "100%" }} onClick={handleSave}>
             Save / सहेजें
           </button>
@@ -923,7 +954,103 @@ export default function AdminPage() {
         {/* Editor */}
         <div style={S.editor}>
           {loading && <p style={{ color: colors.textMuted }}>Loading...</p>}
-          {!loading && data && (
+          {!loading && data && activeSection.startsWith("custom-") ? (
+            /* ─── Custom Section Editor ─── */
+            (() => {
+              const idx = parseInt(activeSection.split("-")[1], 10);
+              const sec = data.customSections?.[idx];
+              if (!sec) return <p>Section not found</p>;
+              const updateField = (field, value) => {
+                const updated = { ...data };
+                updated.customSections = [...updated.customSections];
+                updated.customSections[idx] = { ...updated.customSections[idx], [field]: value };
+                setData(updated);
+              };
+              const POSITIONS = [
+                { value: "after-identity", label: "After Core Identity (मूल परिचय)" },
+                { value: "after-bhrigu", label: "After Maharishi Bhrigu (महर्षि भृगु)" },
+                { value: "after-origin", label: "After Origin Story (उत्पत्ति)" },
+                { value: "after-dwarka", label: "After Dwarka (द्वारका)" },
+                { value: "after-vedic", label: "After Vedic Identity (वैदिक परिचय)" },
+                { value: "after-deities", label: "After Deities (देवी-देवता)" },
+                { value: "after-timeline", label: "After Timeline (कालक्रम)" },
+                { value: "after-geography", label: "After Sacred Geography (भूगोल)" },
+                { value: "after-migration", label: "After Migration (पलायन पथ)" },
+                { value: "after-tree", label: "After Family Tree (वंश वृक्ष)" },
+                { value: "before-outro", label: "Before Outro" },
+              ];
+              return (
+                <div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+                    <h2 style={{ color: colors.accent, margin: 0 }}>
+                      ✏️ {sec.sectionTitle || "New Section"}
+                    </h2>
+                    <button
+                      style={{ ...S.removeBtn, padding: "6px 16px" }}
+                      onClick={() => {
+                        const updated = { ...data };
+                        updated.customSections = updated.customSections.filter((_, i) => i !== idx);
+                        setData(updated);
+                        setActiveSection("hero");
+                      }}
+                    >
+                      Delete Section
+                    </button>
+                  </div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <label style={S.label}>SECTION LABEL (small text above title)</label>
+                    <input
+                      style={S.input}
+                      value={sec.sectionLabel || ""}
+                      onChange={(e) => updateField("sectionLabel", e.target.value)}
+                      placeholder={lang === "hi" ? "उदा: नई जानकारी" : "e.g. New Info"}
+                    />
+                  </div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <label style={S.label}>SECTION TITLE (main heading)</label>
+                    <input
+                      style={S.input}
+                      value={sec.sectionTitle || ""}
+                      onChange={(e) => updateField("sectionTitle", e.target.value)}
+                      placeholder={lang === "hi" ? "अनुभाग का शीर्षक" : "Section Title"}
+                    />
+                  </div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <label style={S.label}>CONTENT (paragraphs — separate with blank lines)</label>
+                    <textarea
+                      style={{ ...S.input, minHeight: 200 }}
+                      value={sec.content || ""}
+                      onChange={(e) => updateField("content", e.target.value)}
+                      placeholder={lang === "hi" ? "यहाँ अनुभाग का विवरण लिखें..." : "Write section content here..."}
+                    />
+                  </div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <label style={S.label}>📍 POSITION — Where should this appear on the portal?</label>
+                    <select
+                      style={{ ...S.input, cursor: "pointer" }}
+                      value={sec.position || "after-geography"}
+                      onChange={(e) => updateField("position", e.target.value)}
+                    >
+                      {POSITIONS.map((p) => (
+                        <option key={p.value} value={p.value}>{p.label}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div style={{ padding: 16, background: "rgba(196,92,0,0.08)", borderRadius: 8, border: `1px dashed ${colors.border}` }}>
+                    <p style={{ margin: 0, fontSize: 13, color: colors.textMuted }}>
+                      💡 This section will appear <strong>{POSITIONS.find(p => p.value === (sec.position || "after-geography"))?.label}</strong> on the portal.
+                      After saving, the portal page component needs to render custom sections — they are stored in the content JSON.
+                    </p>
+                  </div>
+                </div>
+              );
+            })()
+          ) : !loading && data && (
             <SectionEditor
               sectionKey={activeSection}
               schema={SCHEMA[activeSection]}

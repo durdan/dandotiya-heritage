@@ -50,6 +50,34 @@ function parseTagline(tagline) {
   return "";
 }
 
+function CustomSections({ sections, position, fontUI, fontBody, bgClass }) {
+  if (!sections || !sections.length) return null;
+  const matching = sections.filter((s) => s.position === position);
+  if (!matching.length) return null;
+  return matching.map((sec, i) => (
+    <section
+      key={`custom-${position}-${i}`}
+      className={`sec-pad ${bgClass || "bg-p"}`}
+      id={`custom-${sec.sectionTitle?.replace(/\s+/g, "-").toLowerCase() || i}`}
+    >
+      <div className="sec-hdr reveal">
+        {sec.sectionLabel && (
+          <span className="sec-lbl" style={{ fontFamily: fontUI }}>{sec.sectionLabel}</span>
+        )}
+        <h2 className="sec-ttl" style={{ fontFamily: fontUI }}>{sec.sectionTitle}</h2>
+        <div className="sec-rule" />
+      </div>
+      <div className="lore-box reveal" style={{ maxWidth: 800, margin: "0 auto" }}>
+        {(sec.content || "").split("\n\n").map((para, j) => (
+          <p key={j} className="lore-p" style={{ fontFamily: fontBody, marginBottom: 16 }}>
+            {para}
+          </p>
+        ))}
+      </div>
+    </section>
+  ));
+}
+
 export default function PortalPage({ content, lang }) {
   const isHi = lang === "hi";
 
@@ -63,6 +91,8 @@ export default function PortalPage({ content, lang }) {
   const fontUI = isHi ? fontHiUI : fontEn;
 
   const links = NAV_LINKS[lang] || NAV_LINKS.en;
+  const cs = content.customSections || [];
+  const csProps = { sections: cs, fontUI, fontBody };
 
   const taglineStr = parseTagline(content.hero.tagline);
   const taglineLines = taglineStr.split("\n");
@@ -130,6 +160,7 @@ export default function PortalPage({ content, lang }) {
           </p>
         </div>
       </section>
+      <CustomSections {...csProps} position="after-identity" bgClass="bg-p2" />
 
       {/* ══════ MAHARISHI BHRIGU ══════ */}
       <section className="sec-pad bg-p2" id="bhrigu">
@@ -158,6 +189,7 @@ export default function PortalPage({ content, lang }) {
           </div>
         </div>
       </section>
+      <CustomSections {...csProps} position="after-bhrigu" bgClass="bg-p" />
 
       {/* ══════ ORIGIN STORY ══════ */}
       <section className="sec-pad bg-p" id="origin">
@@ -198,6 +230,7 @@ export default function PortalPage({ content, lang }) {
           </div>
         </div>
       </section>
+      <CustomSections {...csProps} position="after-origin" bgClass="bg-p2" />
 
       {/* ══════ DWARKA ══════ */}
       <section className="sec-pad bg-p2" id="dwarka">
@@ -224,6 +257,7 @@ export default function PortalPage({ content, lang }) {
           ))}
         </div>
       </section>
+      <CustomSections {...csProps} position="after-dwarka" bgClass="bg-p" />
 
       {/* ══════ VEDIC IDENTITY ══════ */}
       <section className="sec-pad bg-p" id="vedic">
@@ -246,6 +280,7 @@ export default function PortalPage({ content, lang }) {
           ))}
         </div>
       </section>
+      <CustomSections {...csProps} position="after-vedic" bgClass="bg-p2" />
 
       {/* ══════ DEITIES ══════ */}
       <section className="sec-pad bg-p2" id="deities">
@@ -269,6 +304,7 @@ export default function PortalPage({ content, lang }) {
           ))}
         </div>
       </section>
+      <CustomSections {...csProps} position="after-deities" bgClass="bg-p" />
 
       {/* ══════ TIMELINE ══════ */}
       <section className="sec-pad bg-p" id="lineage">
@@ -293,6 +329,7 @@ export default function PortalPage({ content, lang }) {
           ))}
         </div>
       </section>
+      <CustomSections {...csProps} position="after-timeline" bgClass="bg-p" />
 
       {/* ══════ SACRED GEOGRAPHY ══════ */}
       <section className="sec-pad bg-p" id="geography">
@@ -314,6 +351,7 @@ export default function PortalPage({ content, lang }) {
           ))}
         </div>
       </section>
+      <CustomSections {...csProps} position="after-geography" bgClass="bg-p2" />
 
       {/* ══════ MIGRATION ══════ */}
       <section className="sec-pad bg-p2" id="migration">
@@ -345,9 +383,12 @@ export default function PortalPage({ content, lang }) {
           })}
         </div>
       </section>
+      <CustomSections {...csProps} position="after-migration" bgClass="bg-p" />
 
       {/* ══════ FAMILY TREE ══════ */}
       <FamilyTree />
+      <CustomSections {...csProps} position="after-tree" bgClass="bg-p" />
+      <CustomSections {...csProps} position="before-outro" bgClass="bg-p2" />
 
       {/* ══════ OUTRO ══════ */}
       <section className="outro" id="legacy">
