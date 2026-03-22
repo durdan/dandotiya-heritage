@@ -273,53 +273,60 @@ const colors = {
 const S = {
   page: {
     display: "flex",
+    flexDirection: "column",
     minHeight: "100vh",
     background: colors.bg,
     color: colors.text,
   },
-  sidebar: {
-    width: 240,
-    minWidth: 240,
+  topHeader: {
     background: colors.bgDark,
-    borderRight: `1px solid ${colors.border}`,
-    position: "fixed",
+    borderBottom: `2px solid ${colors.accent}`,
+    position: "sticky",
     top: 0,
-    left: 0,
-    bottom: 0,
+    zIndex: 20,
+    padding: "10px 16px",
+  },
+  headerRow: {
     display: "flex",
-    flexDirection: "column",
-    zIndex: 10,
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 8,
+    flexWrap: "wrap",
   },
-  sidebarHeader: {
-    padding: "20px 16px 12px",
-    borderBottom: `1px solid ${colors.border}`,
-  },
-  sidebarTitle: {
+  headerTitle: {
     fontSize: 16,
     fontWeight: 700,
     color: colors.accent,
     margin: 0,
+    whiteSpace: "nowrap",
   },
-  sidebarSubtitle: {
-    fontSize: 11,
-    color: colors.textMuted,
-    margin: "4px 0 0",
+  headerControls: {
+    display: "flex",
+    gap: 6,
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+  sectionNav: {
+    display: "flex",
+    gap: 4,
+    overflowX: "auto",
+    padding: "8px 0 4px",
+    WebkitOverflowScrolling: "touch",
   },
   navItem: (active) => ({
-    display: "block",
-    width: "100%",
-    padding: "10px 16px",
-    border: "none",
+    display: "inline-block",
+    padding: "6px 12px",
+    border: `1px solid ${active ? colors.accent : colors.border}`,
     background: active ? colors.accent : "transparent",
     color: active ? colors.white : colors.textMuted,
-    textAlign: "left",
-    fontSize: 14,
-    cursor: "pointer",
-    borderLeft: active ? `3px solid ${colors.accentHover}` : "3px solid transparent",
+    fontSize: 12,
     fontWeight: active ? 600 : 400,
+    cursor: "pointer",
+    borderRadius: 4,
+    whiteSpace: "nowrap",
+    flexShrink: 0,
   }),
   main: {
-    marginLeft: 240,
     flex: 1,
     display: "flex",
     flexDirection: "column",
@@ -867,47 +874,61 @@ export default function AdminPage() {
   /* ─── Main Layout ─── */
   return (
     <div style={S.page}>
-      {/* Sidebar */}
-      <aside style={S.sidebar}>
-        <div style={S.sidebarHeader}>
-          <p style={S.sidebarTitle}>दंडोतिया विरासत</p>
-          <p style={S.sidebarSubtitle}>संपादक / Editor</p>
+      {/* Top Header — always visible */}
+      <header style={S.topHeader}>
+        {/* Row 1: Title + Controls */}
+        <div style={S.headerRow}>
+          <p style={S.headerTitle}>दंडोतिया विरासत — संपादक</p>
+          <div style={S.headerControls}>
+            <button style={S.langTab(lang === "hi")} onClick={() => handleLangSwitch("hi")}>
+              हिन्दी
+            </button>
+            <button style={S.langTab(lang === "en")} onClick={() => handleLangSwitch("en")}>
+              English
+            </button>
+            <button style={S.saveBtn} onClick={handleSave}>
+              Save / सहेजें
+            </button>
+            <a
+              style={{ ...S.previewLink, fontSize: 12 }}
+              href={lang === "en" ? "/en" : "/"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Preview ↗
+            </a>
+            <button
+              style={{ background: "none", border: "none", color: colors.textMuted, fontSize: 12, cursor: "pointer", textDecoration: "underline" }}
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </div>
         </div>
 
-        {/* Language toggle in sidebar */}
-        <div style={{ display: "flex", gap: 4, padding: "0 12px 12px", borderBottom: `1px solid ${colors.border}` }}>
-          <button style={{ ...S.langTab(lang === "hi"), flex: 1 }} onClick={() => handleLangSwitch("hi")}>
-            हिन्दी
-          </button>
-          <button style={{ ...S.langTab(lang === "en"), flex: 1 }} onClick={() => handleLangSwitch("en")}>
-            English
-          </button>
-        </div>
-
-        <nav style={{ flex: 1, overflowY: "auto" }}>
+        {/* Row 2: Section tabs — horizontally scrollable */}
+        <div style={S.sectionNav}>
           {SECTION_KEYS.map((key, i) => (
             <button
               key={key}
               style={S.navItem(activeSection === key)}
               onClick={() => setActiveSection(key)}
             >
-              <span style={{ fontSize: 11, opacity: 0.5, marginRight: 6 }}>{i + 1}.</span>
-              {SCHEMA[key].label}
+              {i + 1}. {SCHEMA[key].label}
             </button>
           ))}
-          {/* Show custom sections from data */}
+          {/* Custom sections */}
           {data && data.customSections && data.customSections.map((sec, i) => (
             <button
               key={`custom-${i}`}
               style={S.navItem(activeSection === `custom-${i}`)}
               onClick={() => setActiveSection(`custom-${i}`)}
             >
-              <span style={{ fontSize: 11, opacity: 0.5, marginRight: 6 }}>+</span>
-              {sec.sectionTitle || `New Section ${i + 1}`}
+              + {sec.sectionTitle || `New ${i + 1}`}
             </button>
           ))}
           <button
-            style={{ ...S.navItem(false), color: colors.accentHover, fontStyle: "italic", fontSize: 13 }}
+            style={{ ...S.navItem(false), color: colors.accentHover, fontStyle: "italic", borderStyle: "dashed" }}
             onClick={() => {
               if (!data) return;
               const updated = { ...data };
@@ -922,34 +943,13 @@ export default function AdminPage() {
               setActiveSection(`custom-${updated.customSections.length - 1}`);
             }}
           >
-            + Add New Section
-          </button>
-        </nav>
-
-        {/* Save + Preview + Logout — pinned at bottom */}
-        <div style={{ padding: "12px", borderTop: `1px solid ${colors.border}`, display: "flex", flexDirection: "column", gap: 8, flexShrink: 0 }}>
-          <button style={{ ...S.saveBtn, width: "100%" }} onClick={handleSave}>
-            Save / सहेजें
-          </button>
-          <a
-            style={{ ...S.previewLink, textAlign: "center", display: "block" }}
-            href={lang === "en" ? "/en" : "/"}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Preview site ↗
-          </a>
-          <button
-            style={{ ...S.removeBtn, width: "100%", background: colors.textMuted, fontSize: 12 }}
-            onClick={handleLogout}
-          >
-            Logout
+            + Add Section
           </button>
         </div>
-      </aside>
+      </header>
 
       {/* Main area */}
-      <main style={S.main}>
+      <main style={{ ...S.main, marginLeft: 0 }}>
 
         {/* Editor */}
         <div style={S.editor}>
