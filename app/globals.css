@@ -90,13 +90,18 @@ nav {
 .hero {
   min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; padding: clamp(100px, 15vw, 140px) clamp(20px, 6vw, 60px) clamp(60px, 8vw, 100px);
-  position: relative; overflow: hidden; background: var(--bg);
-  background-image: radial-gradient(circle at 50% 40%, rgba(196, 92, 0, .06) 0%, transparent 70%);
+  position: relative; overflow: hidden;
+  background: var(--bg) url('/hero-bg.png') center center / cover no-repeat;
 }
 .hero::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(circle, rgba(196, 92, 0, .14) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 237, 216, .55) 0%,
+    rgba(245, 237, 216, .45) 30%,
+    rgba(245, 237, 216, .50) 60%,
+    rgba(245, 237, 216, .65) 100%
+  );
 }
 .hero-mandala {
   position: absolute; width: clamp(260px, 60vw, 640px); height: clamp(260px, 60vw, 640px);
@@ -109,16 +114,18 @@ nav {
   font-size: clamp(12px, 1.8vw, 16px); color: var(--saffron);
   margin-bottom: clamp(18px, 3vw, 28px); opacity: 0; animation: fU 1s ease .3s forwards;
   position: relative; letter-spacing: 2px;
+  text-shadow: 0 1px 8px rgba(245, 237, 216, .9);
 }
 .h-title {
   font-weight: 700; font-size: clamp(44px, 10vw, 100px); line-height: 1.1;
   color: var(--ink); margin-bottom: 10px; opacity: 0; animation: fU 1s ease .6s forwards;
-  position: relative; text-shadow: 0 2px 30px rgba(196, 92, 0, .15);
+  position: relative; text-shadow: 0 2px 20px rgba(245, 237, 216, .95), 0 2px 30px rgba(196, 92, 0, .15);
 }
 .h-sub {
   font-weight: 500; font-size: clamp(13px, 2.2vw, 20px); color: var(--saffron);
   opacity: 0; animation: fU 1s ease .9s forwards; margin-bottom: clamp(28px, 4vw, 44px);
   position: relative; letter-spacing: 1px;
+  text-shadow: 0 1px 8px rgba(245, 237, 216, .9);
 }
 .h-div {
   display: flex; align-items: center; gap: 16px;
