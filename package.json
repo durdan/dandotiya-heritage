@@ -4,15 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:tina": "tinacms dev -c \"next dev --webpack\"",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "@tinacms/cli": "^2.1.11",
     "next": "16.2.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "tinacms": "^3.6.3"
+    "react-dom": "19.2.4"
   }
 }
