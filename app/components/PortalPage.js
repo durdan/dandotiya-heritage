@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "./Navbar";
 import Mandala from "./Mandala";
 import Particles from "./Particles";
@@ -418,6 +419,32 @@ export default function PortalPage({ content, lang }) {
           </div>
         </section>
       )}
+
+      {/* ══════ MORENA TOURISM LINK ══════ */}
+      <section className="sec-pad bg-p2" id="morena-link">
+        <Link href="/morena" className="morena-banner reveal">
+          <div className="morena-banner-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Bateshwar_Temple_Complex_-_1.jpg" alt="Bateshwar Temples" loading="lazy" />
+            <div className="morena-banner-overlay" />
+          </div>
+          <div className="morena-banner-text">
+            <span className="morena-banner-badge" style={{ fontFamily: fontUI }}>
+              {lang === "hi" ? "पर्यटन" : "Tourism"}
+            </span>
+            <h3 className="morena-banner-title" style={{ fontFamily: fontUI }}>
+              {lang === "hi" ? "मुरैना के प्राचीन स्थल" : "Ancient Sites of Morena"}
+            </h3>
+            <p className="morena-banner-sub" style={{ fontFamily: fontBody }}>
+              {lang === "hi"
+                ? "200+ प्राचीन मंदिर · संसद भवन की प्रेरणा · 25,000 वर्ष पुरानी गुफाएँ · चम्बल अभयारण्य"
+                : "200+ ancient temples · Parliament inspiration · 25,000-year-old caves · Chambal Sanctuary"}
+            </p>
+            <span className="morena-banner-cta" style={{ fontFamily: fontUI }}>
+              {lang === "hi" ? "देखें →" : "Explore →"}
+            </span>
+          </div>
+        </Link>
+      </section>
 
       {/* ══════ FAMILY TREE ══════ */}
       <FamilyTree />

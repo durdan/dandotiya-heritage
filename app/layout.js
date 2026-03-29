@@ -36,21 +36,41 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: "Dandotiya Heritage Portal | Bhrigu Vansh",
+  metadataBase: new URL("https://www.dandotiya.com"),
+  title: {
+    default: "दंडोतिया विरासत पोर्टल | Dandotiya Heritage Portal",
+    template: "%s | दंडोतिया विरासत पोर्टल",
+  },
   description:
-    "Digital heritage portal of the Dandotiya family — tracing lineage to Maharishi Bhrigu, Saptarishi and mind-born son of Brahma. A name bestowed by Lord Krishna himself.",
+    "दंडोतिया परिवार का डिजिटल विरासत पोर्टल — महर्षि भृगु वंश, यजुर्वेद, माध्यंदिनी शाखा। Digital heritage portal of the Dandotiya family — Bhrigu Vansh, Yajur Veda. A name bestowed by Lord Krishna himself.",
   keywords: [
-    "Dandotiya", "heritage", "Bhrigu", "gotra", "Brahmin",
-    "family tree", "Vedic", "Yajurveda", "Madhyandini",
-    "Dwarka", "Krishna", "Kishandas", "genealogy",
+    "दंडोतिया", "Dandotiya", "भृगु वंश", "Bhrigu Vansh", "ब्राह्मण", "Brahmin",
+    "वंश वृक्ष", "family tree", "यजुर्वेद", "Yajurveda", "माध्यंदिनी शाखा",
+    "Madhyandini", "द्वारका", "Dwarka", "कृष्ण", "Krishna", "किशनदास",
+    "Kishandas", "गोत्र", "gotra", "मुरैना", "Morena", "बदोखर", "Badokhar",
   ],
   openGraph: {
-    title: "Dandotiya Heritage Portal",
-    description: "Bhrigu Vansh · Yajur Veda · Madhyandini Shakha — A name spoken by Lord Krishna himself",
+    title: "दंडोतिया विरासत पोर्टल — Dandotiya Heritage Portal",
+    description: "भृगु वंश · यजुर्वेद · माध्यंदिनी शाखा — एक नाम जो स्वयं श्रीकृष्ण ने दिया",
     type: "website",
     locale: "hi_IN",
     alternateLocale: "en_US",
+    siteName: "Dandotiya Heritage Portal",
+    url: "https://www.dandotiya.com",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "दंडोतिया विरासत पोर्टल",
+    description: "भृगु वंश · यजुर्वेद · माध्यंदिनी शाखा",
+  },
+  alternates: {
+    canonical: "https://www.dandotiya.com",
+    languages: {
+      "hi-IN": "https://www.dandotiya.com",
+      "en-US": "https://www.dandotiya.com/en",
+    },
+  },
+  verification: {},
 };
 
 export default function RootLayout({ children }) {
