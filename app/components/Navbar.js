@@ -84,6 +84,9 @@ export default function Navbar({ lang = "hi", links = [] }) {
             {l.label}
           </a>
         ))}
+        <Link href="/morena" onClick={closeMob} style={{ color: "var(--crimson-l, #C0392B)", fontWeight: 600 }}>
+          {lang === "hi" ? "मुरैना पर्यटन" : "Morena Tourism"}
+        </Link>
         <Link
           href={langHref}
           onClick={closeMob}

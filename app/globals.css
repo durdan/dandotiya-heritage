@@ -429,3 +429,101 @@ footer { padding: clamp(20px, 3vw, 32px) clamp(20px, 6vw, 60px); background: var
   .geo-grid { grid-template-columns: 1fr; }
   .det-grid { grid-template-columns: 1fr; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   MORENA TOURISM PAGE
+   ══════════════════════════════════════════════════════════════ */
+
+.tour-page { --t-bg: #F5EDD8; --t-bg2: #EDE0C0; --t-ink: #1A0F00; --t-ink2: #3D2800; --t-ink3: #5C3D00; --t-saffron: #C45C00; --t-saffron-l: #E87820; --t-crimson: #8B1A1A; background: var(--t-bg); color: var(--t-ink); font-family: 'Noto Sans Devanagari', 'Cormorant Garamond', serif; min-height: 100vh; }
+
+/* NAV */
+.tour-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 58px; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(12px, 3vw, 32px); background: rgba(245, 237, 216, .92); backdrop-filter: blur(12px); border-bottom: 2px solid var(--t-saffron); }
+.tour-nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--t-saffron); text-decoration: none; font-weight: 600; }
+.tour-nav-back:hover { color: var(--t-crimson); }
+.tour-back-arrow { font-size: 18px; }
+.tour-nav-brand { display: flex; align-items: center; gap: 8px; font-size: clamp(14px, 2.5vw, 18px); font-weight: 700; color: var(--t-ink); }
+.tour-nav-om { font-size: 22px; color: var(--t-saffron); }
+.tour-lang-btn { background: var(--t-saffron); color: #fff; border: none; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; cursor: pointer; }
+.tour-lang-btn:hover { background: var(--t-crimson); }
+
+/* HERO */
+.tour-hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px clamp(16px, 5vw, 60px) 40px; background: url('https://upload.wikimedia.org/wikipedia/commons/0/07/Bateshwar_Temple_Complex_-_1.jpg') center/cover no-repeat; overflow: hidden; }
+.tour-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,15,0,.7) 0%, rgba(26,15,0,.5) 50%, rgba(26,15,0,.75) 100%); }
+.tour-hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; }
+.tour-hero-badge { display: inline-block; background: rgba(196,92,0,.3); border: 1px solid rgba(232,120,32,.5); color: #F5EDD8; padding: 6px 18px; border-radius: 20px; font-size: clamp(11px, 1.5vw, 14px); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.tour-hero-title { font-size: clamp(48px, 10vw, 96px); font-weight: 900; color: #F5EDD8; line-height: 1; margin: 0 0 12px; text-shadow: 0 4px 20px rgba(0,0,0,.4); font-family: 'Cinzel Decorative', 'Noto Sans Devanagari', serif; }
+.tour-hero-sub { font-size: clamp(14px, 2.5vw, 20px); color: rgba(245,237,216,.85); margin: 0 0 16px; letter-spacing: 3px; }
+.tour-hero-desc { font-size: clamp(13px, 1.8vw, 16px); color: rgba(245,237,216,.7); max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
+.tour-hero-stats { display: flex; gap: clamp(16px, 4vw, 48px); justify-content: center; flex-wrap: wrap; }
+.tour-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.tour-stat-num { font-size: clamp(28px, 5vw, 44px); font-weight: 900; color: var(--t-saffron-l); font-family: 'Cinzel Decorative', serif; }
+.tour-stat-lbl { font-size: clamp(10px, 1.4vw, 13px); color: rgba(245,237,216,.6); text-transform: uppercase; letter-spacing: 1px; }
+.tour-hero-scroll { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; color: rgba(245,237,216,.5); font-size: 12px; z-index: 2; animation: tour-bounce 2s infinite; }
+.tour-scroll-arrow { font-size: 20px; }
+@keyframes tour-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+/* MAP OVERVIEW GRID */
+.tour-map-section { padding: clamp(32px, 6vw, 80px) clamp(16px, 5vw, 60px); background: var(--t-bg); }
+.tour-map-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 2.5vw, 24px); max-width: 1200px; margin: 0 auto; }
+.tour-map-card { background: #fff; border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--t-ink); border: 1px solid rgba(196,92,0,.12); transition: transform .3s, box-shadow .3s; }
+.tour-map-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,15,0,.12); }
+.tour-map-img-wrap { position: relative; height: 180px; overflow: hidden; }
+.tour-map-img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.tour-map-card:hover .tour-map-img { transform: scale(1.06); }
+.tour-map-era { position: absolute; top: 10px; right: 10px; background: rgba(26,15,0,.7); color: #F5EDD8; padding: 3px 10px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+.tour-map-info { padding: 14px 16px 16px; }
+.tour-map-name { font-size: clamp(14px, 2vw, 17px); font-weight: 700; margin: 0 0 6px; color: var(--t-ink); }
+.tour-map-tag { font-size: clamp(11px, 1.4vw, 13px); color: var(--t-ink3); margin: 0 0 8px; line-height: 1.4; }
+.tour-map-dist { font-size: 11px; color: var(--t-saffron); font-weight: 600; }
+
+/* SPOT DETAIL SECTIONS */
+.tour-spot { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 60px); padding: clamp(40px, 6vw, 80px) clamp(16px, 5vw, 60px); max-width: 1200px; margin: 0 auto; align-items: center; }
+.tour-spot-right { direction: rtl; }
+.tour-spot-right > * { direction: ltr; }
+.tour-spot-images { display: flex; flex-direction: column; gap: 12px; }
+.tour-spot-img-main { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 32px rgba(26,15,0,.12); }
+.tour-spot-img-main img { width: 100%; height: 300px; object-fit: cover; display: block; }
+.tour-spot-img-sec { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 16px rgba(26,15,0,.08); }
+.tour-spot-img-sec img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.tour-spot-content { }
+.tour-spot-era { display: inline-block; background: rgba(196,92,0,.12); color: var(--t-saffron); padding: 4px 14px; border-radius: 16px; font-size: 12px; font-weight: 700; margin-bottom: 10px; }
+.tour-spot-name { font-size: clamp(22px, 4vw, 34px); font-weight: 800; margin: 0 0 8px; color: var(--t-ink); line-height: 1.2; }
+.tour-spot-tagline { font-size: clamp(13px, 1.8vw, 16px); color: var(--t-saffron); font-weight: 600; margin: 0 0 14px; font-style: italic; }
+.tour-spot-divider { width: 50px; height: 2px; background: linear-gradient(90deg, var(--t-saffron), transparent); margin-bottom: 14px; }
+.tour-spot-desc { font-size: clamp(13px, 1.6vw, 15px); color: var(--t-ink2); line-height: 1.7; margin: 0 0 18px; }
+.tour-spot-facts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.tour-fact { display: flex; align-items: flex-start; gap: 10px; padding: 8px 12px; background: rgba(245,237,216,.7); border-radius: 8px; border-left: 3px solid var(--t-saffron); }
+.tour-fact-icon { font-size: 18px; flex-shrink: 0; }
+.tour-fact-text { font-size: clamp(12px, 1.4vw, 13px); color: var(--t-ink2); line-height: 1.4; }
+.tour-spot-meta { }
+.tour-spot-dist { font-size: 13px; color: var(--t-ink3); }
+
+/* Alternating section backgrounds */
+.tour-spot:nth-child(even of .tour-spot) { background: var(--t-bg2); border-radius: 0; padding-left: clamp(16px, 5vw, 60px); padding-right: clamp(16px, 5vw, 60px); max-width: none; }
+
+/* CTA */
+.tour-cta { text-align: center; padding: clamp(48px, 8vw, 100px) clamp(16px, 5vw, 60px); background: var(--t-ink); }
+.tour-cta-title { font-size: clamp(22px, 4vw, 36px); color: #F5EDD8; font-weight: 800; margin: 0 0 16px; }
+.tour-cta-sub { font-size: clamp(13px, 1.8vw, 16px); color: rgba(245,237,216,.7); max-width: 600px; margin: 0 auto 28px; line-height: 1.7; }
+.tour-cta-btn { display: inline-block; background: var(--t-saffron); color: #fff; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; transition: background .2s; }
+.tour-cta-btn:hover { background: var(--t-crimson); }
+
+/* FOOTER */
+.tour-footer { text-align: center; padding: 20px; background: var(--t-bg2); color: var(--t-ink3); font-size: 11px; }
+
+/* REVEAL ANIMATION — CSS-only using scroll-driven animation */
+.tour-reveal { animation: tour-fade-in linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }
+@keyframes tour-fade-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: view()) {
+  .tour-reveal { opacity: 1; transform: none; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tour-spot { grid-template-columns: 1fr; }
+  .tour-spot-right { direction: ltr; }
+  .tour-spot-img-main img { height: 220px; }
+  .tour-spot-img-sec img { height: 120px; }
+  .tour-hero { min-height: 90vh; }
+}
