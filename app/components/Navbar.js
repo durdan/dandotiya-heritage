@@ -43,6 +43,11 @@ export default function Navbar({ lang = "hi", links = [] }) {
               <a href={l.href}>{l.label}</a>
             </li>
           ))}
+          <li>
+            <Link href="/morena" style={{ color: "var(--crimson-l, #C0392B)", fontWeight: 600 }}>
+              {lang === "hi" ? "मुरैना" : "Morena"}
+            </Link>
+          </li>
         </ul>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Link href={langHref}>
