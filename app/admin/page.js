@@ -206,6 +206,31 @@ const SCHEMA = {
       },
     ],
   },
+  directory: {
+    label: "Service Directory",
+    fields: [
+      { type: "string", name: "sectionLabel", label: "Section Label" },
+      { type: "string", name: "sectionTitle", label: "Section Title" },
+      {
+        type: "array",
+        name: "categories",
+        label: "Categories",
+        fields: [
+          { type: "string", name: "title", label: "Category Title" },
+          { type: "string", name: "icon", label: "Icon (emoji)" },
+          {
+            type: "array",
+            name: "entries",
+            label: "Entries",
+            fields: [
+              { type: "string", name: "name", label: "Name" },
+              { type: "string", name: "phone", label: "Phone" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
   outro: {
     label: "Outro",
     fields: [

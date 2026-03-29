@@ -13,6 +13,7 @@ const NAV_LINKS = {
     { href: "#deities", label: "देवी-देवता" },
     { href: "#lineage", label: "इतिहास" },
     { href: "#geography", label: "तीर्थ स्थल" },
+    { href: "#directory", label: "सेवा निर्देशिका" },
     { href: "#tree-section", label: "वंश वृक्ष" },
   ],
   en: [
@@ -23,6 +24,7 @@ const NAV_LINKS = {
     { href: "#deities", label: "Deities" },
     { href: "#lineage", label: "Timeline" },
     { href: "#geography", label: "Geography" },
+    { href: "#directory", label: "Directory" },
     { href: "#tree-section", label: "Family Tree" },
   ],
 };
@@ -385,6 +387,37 @@ export default function PortalPage({ content, lang }) {
         </div>
       </section>
       <CustomSections {...csProps} position="after-migration" bgClass="bg-p" />
+
+      {/* ══════ COMMUNITY DIRECTORY ══════ */}
+      {content.directory && (
+        <section className="sec-pad bg-p" id="directory">
+          <div className="sec-hdr reveal">
+            <span className="sec-lbl" style={{ fontFamily: fontUI }}>{content.directory.sectionLabel}</span>
+            <h2 className="sec-ttl" style={{ fontFamily: fontUI }}>{content.directory.sectionTitle}</h2>
+          </div>
+          <div className="dir-grid">
+            {content.directory.categories.map((cat, ci) => (
+              <details key={ci} className="dir-cat reveal">
+                <summary className="dir-cat-hdr" style={{ fontFamily: fontUI }}>
+                  <span className="dir-cat-icon">{cat.icon}</span>
+                  <span className="dir-cat-title">{cat.title}</span>
+                  <span className="dir-cat-count">{cat.entries.length}</span>
+                </summary>
+                <div className="dir-entries">
+                  {cat.entries.map((entry, ei) => (
+                    <div key={ei} className="dir-entry">
+                      <span className="dir-name" style={{ fontFamily: fontBody }}>{entry.name}</span>
+                      <a className="dir-phone" href={`tel:${entry.phone.split(',')[0].trim()}`} style={{ fontFamily: fontBody }}>
+                        {entry.phone}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ══════ FAMILY TREE ══════ */}
       <FamilyTree />

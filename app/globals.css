@@ -281,6 +281,28 @@ section { position: relative; }
 .mig-line { width: clamp(32px, 5vw, 56px); height: 1.5px; background: linear-gradient(90deg, rgba(196, 92, 0, .3), var(--saffron), rgba(196, 92, 0, .3)); }
 .mig-pt { font-size: clamp(14px, 2vw, 18px); color: var(--saffron); }
 
+/* ── COMMUNITY DIRECTORY ── */
+.dir-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: clamp(12px, 2vw, 20px); }
+.dir-cat { background: #fff; border-radius: 10px; border: 1px solid rgba(196,92,0,.15); overflow: hidden; }
+.dir-cat[open] { box-shadow: 0 4px 16px rgba(26,15,0,.08); }
+.dir-cat-hdr { display: flex; align-items: center; gap: 10px; padding: clamp(12px, 2vw, 16px); cursor: pointer; list-style: none; user-select: none; }
+.dir-cat-hdr::-webkit-details-marker { display: none; }
+.dir-cat-hdr::marker { display: none; content: ''; }
+.dir-cat-icon { font-size: clamp(20px, 3vw, 28px); }
+.dir-cat-title { flex: 1; font-size: clamp(14px, 2vw, 17px); font-weight: 600; color: var(--ink); }
+.dir-cat-count { background: var(--saffron); color: #fff; font-size: 11px; font-weight: 700; min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 12px; padding: 0 7px; }
+.dir-cat-hdr::after { content: '▸'; font-size: 14px; color: var(--ink3); transition: transform .2s; }
+.dir-cat[open] > .dir-cat-hdr::after { transform: rotate(90deg); }
+.dir-entries { border-top: 1px solid rgba(196,92,0,.1); }
+.dir-entry { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px clamp(12px, 2vw, 16px); border-bottom: 1px solid rgba(196,92,0,.06); }
+.dir-entry:last-child { border-bottom: none; }
+.dir-name { font-size: clamp(12px, 1.6vw, 14px); color: var(--ink2); flex: 1; }
+.dir-phone { font-size: clamp(12px, 1.6vw, 14px); color: var(--saffron); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.dir-phone:hover { color: var(--crimson); }
+@media (max-width: 480px) {
+  .dir-entry { flex-direction: column; align-items: flex-start; gap: 3px; }
+}
+
 /* ── FAMILY TREE SECTION ── */
 .tree-section { padding: 0; overflow: hidden; }
 .tree-section-hdr { padding: 16px clamp(16px, 4vw, 40px) 14px; background: var(--bg3); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-bottom: 2px solid var(--saffron); }

@@ -386,6 +386,107 @@
       }
     ]
   },
+  "directory": {
+    "sectionLabel": "Community Service Directory",
+    "sectionTitle": "Local Services — Morena",
+    "categories": [
+      {
+        "title": "AC & Refrigeration Repair",
+        "icon": "❄️",
+        "entries": [
+          { "name": "D.K. Refrigeration (Jean)", "phone": "9893167618" },
+          { "name": "J.B. Refrigeration (Mill Area Road)", "phone": "9516673940" },
+          { "name": "K.K. Refrigeration (Near Gufa Mandir)", "phone": "8817702665" },
+          { "name": "Varsha Refrigeration (Ganeshpura)", "phone": "9993068486" },
+          { "name": "Suresh Refrigeration (Gufa Mandir)", "phone": "9302793400" },
+          { "name": "Amit Sharma", "phone": "7000272528" },
+          { "name": "Sagar Shivhare (RO Repairing)", "phone": "9074733738" }
+        ]
+      },
+      {
+        "title": "Essential Services",
+        "icon": "🚨",
+        "entries": [
+          { "name": "Swarg Rath (A.Bha. Mahaur Gware Vaishya Sabha)", "phone": "8871217759" },
+          { "name": "Swarg Rath (Lions Club)", "phone": "9300649393" },
+          { "name": "Deep Freezer (For Dead Body)", "phone": "9425126270" },
+          { "name": "Unclaimed Body Last Rites Contact", "phone": "7898786766, 9303671008" },
+          { "name": "Last Rites Material Service (Banke Bihari Bhakt Mandal)", "phone": "7898892077" }
+        ]
+      },
+      {
+        "title": "Electrician + Plumber",
+        "icon": "🔧",
+        "entries": [
+          { "name": "Bhagwandas", "phone": "7725887348" },
+          { "name": "Chhotu", "phone": "8839082544" },
+          { "name": "Raju", "phone": "8305120148" },
+          { "name": "Dinesh", "phone": "9691291394" },
+          { "name": "Satish", "phone": "7697893277" },
+          { "name": "Dinesh", "phone": "9907701597" }
+        ]
+      },
+      {
+        "title": "Marriage Gardens",
+        "icon": "💒",
+        "entries": [
+          { "name": "Shahnai Resort (Jaura Road)", "phone": "9425126945" },
+          { "name": "Indralok Palace (Dholpur Road)", "phone": "9893477770" },
+          { "name": "Balaji Palace (Madhaupura ki Puliya)", "phone": "9691556939" },
+          { "name": "Gupta Banquet Hall (Madhaupura ki Puliya)", "phone": "9827273397" },
+          { "name": "Anandi Vatika (Warehouse Road)", "phone": "8691556939" },
+          { "name": "Sanjay Palace (Warehouse Road)", "phone": "9301592760" },
+          { "name": "Mangal Vatika (Warehouse Road)", "phone": "9425780030" },
+          { "name": "JP Vatika (Sanjay Colony Chauraha)", "phone": "9827643211" },
+          { "name": "Sona Garden (Near Rajput Hotel)", "phone": "9893896515" },
+          { "name": "Mishra Garden (Near KS Mill, Nainagarh Road)", "phone": "9827273390" },
+          { "name": "Kanha Resort (Ambah Bypass, Morena)", "phone": "9575357735" },
+          { "name": "Mathura Palace (Ambah Road, Morena)", "phone": "7999768203" },
+          { "name": "Milan Palace (Near Girls School, Morena)", "phone": "9300647063" },
+          { "name": "Gokul Garden (Madhaupura ki Puliya, Morena)", "phone": "9691556939" },
+          { "name": "Radhika Palace (Near TIT Complex, Morena)", "phone": "7999032077" },
+          { "name": "Agrawal Seva Sadan (TR Puram, Morena)", "phone": "9301365811" },
+          { "name": "Mansarovar Palace (Mill Area Road, Morena)", "phone": "9893430338" }
+        ]
+      },
+      {
+        "title": "Bands",
+        "icon": "🎺",
+        "entries": [
+          { "name": "Chirag Band (Nala No. 2)", "phone": "9425782752" },
+          { "name": "Ashoka Band (Nala No. 2)", "phone": "9993871733" },
+          { "name": "Tunda Band (Palika Bazaar)", "phone": "9755647841" },
+          { "name": "Upkar Band (Palika Bazaar)", "phone": "9575914996" },
+          { "name": "Maa Sheetla Band (Palika Bazaar)", "phone": "9179330701" },
+          { "name": "Raja Band", "phone": "6265622656" }
+        ]
+      },
+      {
+        "title": "Event Companies",
+        "icon": "🎪",
+        "entries": [
+          { "name": "Kapil Jauhari", "phone": "9406507183" },
+          { "name": "Prashant Sharma Senki", "phone": "7999032077" },
+          { "name": "Mayank Shrivastav", "phone": "8109404428" }
+        ]
+      },
+      {
+        "title": "Bus & Tour Travels",
+        "icon": "🚌",
+        "entries": [
+          { "name": "G.T. Transport Travels (New Sales Tax Barrier, Morena)", "phone": "9425456627" },
+          { "name": "Janved Travels (Bus Stand, Morena)", "phone": "9926293703" },
+          { "name": "Pitambara Travels (Bus Stand, Morena)", "phone": "9301258174" },
+          { "name": "Easy Tour & Travels (Jiwaji Ganj, Morena)", "phone": "9806549596" },
+          { "name": "Singh Tour & Travels (Civil Line Thana, Morena)", "phone": "9826959641" },
+          { "name": "S.K.T. Travels (Barrier, Morena)", "phone": "9425126703" },
+          { "name": "G.T. Express (Bus Stand, Morena)", "phone": "8889802777" },
+          { "name": "Chambal Bus Service (Bus Stand, Morena)", "phone": "9425134188" },
+          { "name": "Hans Travels (Bus Stand, Morena)", "phone": "9575141516" }
+        ]
+      }
+    ]
+  },
   "footer": {
     "brand": "Dandotiya Heritage Portal",
     "note": "Based on family records, oral history, and Vedic scholarly research"
